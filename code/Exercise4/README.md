@@ -55,3 +55,6 @@ public class PrivateFields extends VoidVisitorWithDefaults<Void> {
    }
 }
 ```
+
+
+![WhatsApp Image 2024-10-11 à 15 26 42_a69ad76f](https://github.com/user-attachments/assets/f5f97645-e256-4db3-9f5a-718edbd9c697)
