@@ -1,5 +1,4 @@
-### Implementation of the class [CyclomaticComplexity.java](./CyclomaticComplexity.java) 
-
+### Implementation of the class [CyclomaticComplexity.java](../javaparser-starter/src/main/java/fr/istic/vv/CyclomaticComplexity.java)
 ### Changes in the main.java
 ```java
 SourceRoot root = new SourceRoot(file.toPath());
