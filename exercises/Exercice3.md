@@ -23,6 +23,7 @@ Use your rule with different projects and describe you findings below. See the [
 
 ## Answer
 we worked with the **commons-cli-master** project to solve the problem of detecting complex code due to multiple nested `if` statements. To address this, we created a custom PMD rule using XPath to catch any instances where there are three or more nested `if` statements.
+[thr rule](../Exercise3/ruletest.xml)
 
 We used the following XPath expression in the rule to detect nested `if` statements:
 
