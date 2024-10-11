@@ -22,4 +22,16 @@ You can find more information on extending PMD in the following link: https://pm
 Use your rule with different projects and describe you findings below. See the [instructions](../sujet.md) for suggestions on the projects to use.
 
 ## Answer
+we worked with the **commons-cli-master** project to solve the problem of detecting complex code due to multiple nested `if` statements. To address this, we created a custom PMD rule using XPath to catch any instances where there are three or more nested `if` statements.
 
+We used the following XPath expression in the rule to detect nested `if` statements:
+
+```xml
+/IfStatement[descendant::IfStatement[descendant::IfStatement]]
+```
+This expression looks for an if statement that contains another if, which in turn contains a third one, ensuring that it detects when there are three or more nested if statements.
+
+To test this rule, we ran PMD on the commons-cli-master project using the following command:
+```
+pmd check -f text -R C:/Users/Lenovo/Downloads/ruletest.xml -d C:/Users/Lenovo/Downloads/pppp.java -r C:/Users/Lenovo/Downloads/reportttt.txt
+```
