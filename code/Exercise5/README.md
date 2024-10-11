@@ -23,4 +23,4 @@ https://github.com/apache/commons-cli.git
 <img width="749" alt="CC1" src="https://github.com/user-attachments/assets/817f82b8-c282-403e-af42-b72247a16864">
 
 ### comparison between the 2 histograms
-The two histograms show that both projects have the majority of methods with a cyclomatic complexity of 1, it means that most methods are simple.The difference is that the Project 1 is significantly larger, with around 2400 methods compared to 240 in Project 2.Additionally, Project 1 has some methods reaching up to 24, whereas Project 2 tops out at 14. This suggests that Project 1 contains more complex logic than Project 1.
+The two histograms show that both projects have the majority of methods with a cyclomatic complexity of 1, it means that most methods are simple.The difference is that the Project 1 is significantly larger, with around 2400 methods compared to 240 in Project 2. Additionally, Project 1 has some methods reaching up to 24, whereas Project 2 tops out at 14. This suggests that Project 1 contains more complex logic than Project 2.
