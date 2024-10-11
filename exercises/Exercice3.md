@@ -33,5 +33,11 @@ This expression looks for an if statement that contains another if, which in tur
 
 To test this rule, we ran PMD on the commons-cli-master project using the following command:
 ```
-pmd check -f text -R C:/Users/Lenovo/Downloads/ruletest.xml -d C:/Users/Lenovo/Downloads/pppp.java -r C:/Users/Lenovo/Downloads/reportttt.txt
+pmd check -f text -R C:/Users/Lenovo/Downloads/ruletest.xml -d C:/Users/Lenovo/Downloads/commons-cli-master.java -r C:/Users/Lenovo/Downloads/reportttt.txt
 ```
+#### Results 
+The rule worked as expected, and PMD identified several occurrences of nested if statements. These results were saved in the file reportttt.txt. Here are some examples from the report:
+
+![image](https://github.com/user-attachments/assets/0fe671cd-d521-4c18-aeba-2ddf8ff44cb8)
+
+
