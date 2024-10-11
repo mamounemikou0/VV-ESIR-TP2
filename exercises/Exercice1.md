@@ -53,9 +53,5 @@ LCC=(Directly or indirectly connected method pairs​)/(Total method pairs)=3/3=
 
 No, LCC can never be lower than TCC. This is because:   
 
-TCC only counts direct method connections, where methods directly access the same instance variables.
-
-LCC counts both direct and indirect connections, so it considers more connections.
-
-Therefore, LCC can only be equal to or greater than TCC. If all methods are directly connected (TCC = LCC), but if some methods are only indirectly connected (not directly sharing instance variables), LCC will be higher than TCC.
+TCC only counts direct method connections, where methods directly access the same instance variables.LCC counts both direct and indirect connections, so it considers more connections.Therefore, LCC can only be equal to or greater than TCC. If all methods are directly connected (TCC = LCC), but if some methods are only indirectly connected (not directly sharing instance variables), LCC will be higher than TCC.
 
