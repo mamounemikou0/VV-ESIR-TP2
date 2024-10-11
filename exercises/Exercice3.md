@@ -28,7 +28,7 @@ we worked with the **commons-cli-master** project to solve the problem of detect
 We used the following XPath expression in the rule to detect nested `if` statements:
 
 ```xml
-/IfStatement[descendant::IfStatement[descendant::IfStatement]]
+//IfStatement[descendant::IfStatement[descendant::IfStatement]]
 ```
 This expression looks for an if statement that contains another if, which in turn contains a third one, ensuring that it detects when there are three or more nested if statements.
 
