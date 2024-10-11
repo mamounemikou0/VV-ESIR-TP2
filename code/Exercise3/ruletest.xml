@@ -6,11 +6,11 @@
     xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
 
     <description>
-        My custom rules
+        This rule detects the use of three or more nested 'if' statements.
     </description>
-<rule name="find_if"
+<rule name="mamoune"
       language="java"
-      message="found "
+      message="Avoid nesting three or more 'if' statements. "
       class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
    <description>
 
@@ -20,9 +20,7 @@
       <property name="xpath">
          <value>
 <![CDATA[
-   //IfStatement
-        [descendant::IfStatement
-          [descendant::IfStatement]]
+   //IfStatement[descendant::IfStatement[descendant::IfStatement]]
 ]]>
          </value>
       </property>
@@ -33,5 +31,3 @@
     <!-- Your rules will come here -->
 
 </ruleset>
-
-
