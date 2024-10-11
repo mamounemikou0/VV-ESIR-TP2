@@ -41,7 +41,10 @@ In this example, all methods (`getId()`, `incrementNumber()`, and `setId()`) dir
 - (`getId()`, `setId()`)
 - (`incrementNumber()`, `setId()`)
 
-is directly connected. Since no indirect connections are needed, TCC and LCC will have the same value.
-TCC=(Directly connected method pairs​)/(Total method pairs)=3/3=1
-LCC=(Directly or indirectly connected method pairs​)/(Total method pairs)=3/3=1
+is directly connected. Since no indirect connections are needed, TCC and LCC will have the same value.   
+
+TCC=(Directly connected method pairs​)/(Total method pairs)=3/3=1   
+
+LCC=(Directly or indirectly connected method pairs​)/(Total method pairs)=3/3=1   
+
 ⇒ In this example TCC=LCC
