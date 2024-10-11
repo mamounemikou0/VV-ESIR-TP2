@@ -7,10 +7,10 @@ Pick a Java project from Github (see the [instructions](../sujet.md) for suggest
 
 ## Answer
 
-### Projet utilisé:
+### Projet used:
 https://github.com/apache/commons-cli.git
 
-### True positive: Retourner une collection vide plutôt que null.
+### True positive: Return an empty collection rather than null.
 ```java
 public String[] getOptionValues(final Option option) {
        if (option == null) {
