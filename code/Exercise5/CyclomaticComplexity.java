@@ -1,6 +1,5 @@
 
 
-```java
 package fr.istic.vv;
 
 import com.github.javaparser.ast.CompilationUnit;
@@ -118,4 +117,3 @@ public class CyclomaticComplexity extends VoidVisitorWithDefaults<Void> {
     }
 }
 
-```
