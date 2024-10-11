@@ -1,5 +1,5 @@
 # Code of your exercise
-
+```java
 package fr.istic.vv;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.*;
@@ -54,3 +54,4 @@ public class PrivateFields extends VoidVisitorWithDefaults<Void> {
        }
    }
 }
+```
