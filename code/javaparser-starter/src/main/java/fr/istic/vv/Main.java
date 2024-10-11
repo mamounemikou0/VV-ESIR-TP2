@@ -28,7 +28,9 @@ public class Main {
         }
 
         SourceRoot root = new SourceRoot(file.toPath());
-        PublicElementsPrinter printer = new PublicElementsPrinter();
+        //PublicElementsPrinter printer = new PublicElementsPrinter();
+        //PrivateFields printer = new PrivateFields();
+        CyclomaticComplexity printer = new CyclomaticComplexity();
         root.parse("", (localPath, absolutePath, result) -> {
             result.ifSuccessful(unit -> unit.accept(printer, null));
             return SourceRoot.Callback.Result.DONT_SAVE;
