@@ -1,4 +1,4 @@
-#### Implemetation de la class [PrivateField.java](./PrivateField.java)  ###
+#### Implemetation de la class [PrivateFields.java](../javaparser-starter/src/main/java/fr/istic/vv/PrivateFields.java)  ###
 ### changes in main.java
 ```java
 SourceRoot root = new SourceRoot(file.toPath());
