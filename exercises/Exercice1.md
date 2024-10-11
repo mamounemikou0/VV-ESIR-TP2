@@ -32,7 +32,7 @@ public class Author {
     public void setId(int id) {
         this.id = id;  // Accesses instance variable
     }
-}
+}```
 
 In this example, all methods (`getId()`, `incrementNumber()`, and `setId()`) directly access the same instance variable, `id`. Therefore, every possible method pair:
 
