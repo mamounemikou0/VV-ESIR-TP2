@@ -31,10 +31,10 @@ This code change will help us avoid potential issues when using code that calls 
 
 ### False positive: Comment is too large: Line too long
 
-/**
+```java
  * @return Value of the argument if option is set, and has an argument, otherwise {@code defaultValue}.
- */
+```
 
-Cela ne vaut pas la peine d'être corrigé parce que sa reformulation pour respecter une limite de longueur ne change pas significativement la clarté du code, le commentaire est compréhensible même s'il dépasse légèrement la longueur de ligne recommandée.
+This is not worth fixing because rewording it to meet a length limit does not significantly change the clarity of the code, the comment is understandable even if it slightly exceeds the recommended line length.
 
 
