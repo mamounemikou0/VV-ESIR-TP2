@@ -1,3 +1,6 @@
+
+
+```java
 package fr.istic.vv;
 
 import com.github.javaparser.ast.CompilationUnit;
@@ -13,7 +16,6 @@ public class CyclomaticComplexity extends VoidVisitorWithDefaults<Void> {
     private StringBuilder report = new StringBuilder();
 
     public CyclomaticComplexity() {
-        // Initialisation de l'en-tête du rapport CSV
         report.append("Package|Class|Method|Cyclomatic Complexity\n");
     }
 
@@ -22,7 +24,7 @@ public class CyclomaticComplexity extends VoidVisitorWithDefaults<Void> {
         for (TypeDeclaration<?> type : unit.getTypes()) {
             type.accept(this, arg);
         }
-        // Sauvegarder le rapport une fois l'analyse terminée
+        // pour sauvegarder le rapport une fois l'analyse terminée
         saveReport(unit.getPackageDeclaration().map(pd -> pd.getNameAsString()).orElse("default"));
     }
 
@@ -31,7 +33,7 @@ public class CyclomaticComplexity extends VoidVisitorWithDefaults<Void> {
         for (MethodDeclaration method : declaration.getMethods()) {
             method.accept(this, arg);
         }
-        // Gérer les types imbriqués
+        // Gére les types imbriqués
         for (BodyDeclaration<?> member : declaration.getMembers()) {
             if (member instanceof TypeDeclaration) {
                 member.accept(this, arg);
@@ -47,17 +49,12 @@ public class CyclomaticComplexity extends VoidVisitorWithDefaults<Void> {
     @Override
     public void visit(MethodDeclaration declaration, Void arg) {
         int complexity = calculateCyclomaticComplexity(declaration);
-
-        // Obtenir le nom de la méthode
         String methodName = declaration.getNameAsString();
-
-        // Obtenir le package
         String packageName = declaration.findCompilationUnit()
                 .flatMap(CompilationUnit::getPackageDeclaration)
                 .map(pd -> pd.getName().toString())
                 .orElse("[No Package]");
-
-        // Obtenir le nom de la classe sans le package
+        // pour obtenir le nom de la classe sans le package
         String className = declaration.findAncestor(ClassOrInterfaceDeclaration.class)
                 .map(ClassOrInterfaceDeclaration::getNameAsString)
                 .orElse("[Anonymous Class]");
@@ -66,13 +63,13 @@ public class CyclomaticComplexity extends VoidVisitorWithDefaults<Void> {
         report.append(String.format("%s|%s|%s|%d\n", packageName, className, methodName, complexity));
     }
 
- // Méthode pour calculer la complexité cyclomatique
+ // méthode pour calculer la complexité cyclomatique
     private int calculateCyclomaticComplexity(MethodDeclaration method) {
         int n = 0; // Nombre de nœuds (structures de contrôle)
         int e = 0; // Nombre d'arêtes (chemins possibles)
         int p = 1; // Nombre de composantes connectées (1 pour les méthodes simples)
 
-        // Compter les nœuds pour chaque type de structure de contrôle
+        // on compte les nœuds pour chaque type de structure de contrôle
         int ifCount = method.findAll(IfStmt.class).size();
         int forCount = method.findAll(ForStmt.class).size();
         int whileCount = method.findAll(WhileStmt.class).size();
@@ -90,27 +87,27 @@ public class CyclomaticComplexity extends VoidVisitorWithDefaults<Void> {
         n += breakCount;
         n += continueCount;
 
-        // Arêtes: chaque structure de contrôle ajoute des chemins possibles
+        // arrtes:chaque structure de contrôle ajoute des chemins possibles
         e += ifCount * 2; // Chaque if crée 2 chemins (vrai/faux)
         e += forCount * 2; // Chaque for crée 2 chemins (continuer/fin)
         e += whileCount * 2; // Chaque while crée 2 chemins (continuer/fin)
         e += doCount * 2; // Chaque do crée 2 chemins (continuer/fin)
 
-        // Les switch créent un chemin par case, plus un chemin par défaut
+        // Les switch créent un chemin par case de plus un chemin par défaut
         e += method.findAll(SwitchStmt.class).stream()
                     .mapToInt(switchStmt -> switchStmt.getEntries().size() + 1)
                     .sum();
 
-        // Si aucune structure de contrôle n'est trouvée, la méthode est triviale
+        // Si on trouve pas une structure de contrôle, la méthode est triviale
         if (n == 0 && e == 0) {
             return 1; // Complexité cyclomatique minimale
         }
 
-        // Calculer la complexité cyclomatique avec la formule
+        // calculer la complexité cyclomatique avec cette formule
         return e - n + 2 * p;
     }
 
-    // Sauvegarde le rapport dans un fichier CSV
+    // Sauvegarder le rapport dans un fichier csv
     private void saveReport(String packageName) {
         try (FileWriter writer = new FileWriter("cyclomatic-complexity-report.csv")) {
             writer.write(report.toString());
@@ -120,3 +117,5 @@ public class CyclomaticComplexity extends VoidVisitorWithDefaults<Void> {
         }
     }
 }
+
+```
